@@ -1,0 +1,1497 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 21st Birthday Baby ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap');
+
+
+/* ================= GENERAL ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(113, 25, 35, .28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(150, 115, 45, .12),
+            transparent 30%
+        ),
+
+        #090909;
+
+    color: #f5eee4;
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ================= PASSWORD SCREEN ================= */
+
+#passwordScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(113,25,35,.35),
+            transparent 35%
+        ),
+
+        #080808;
+
+    color: #f5eee4;
+}
+
+
+.lock {
+
+    font-size: 48px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.password-small {
+
+    color: #c9a86a;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+#passwordScreen h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    font-weight: 600;
+
+}
+
+
+#passwordScreen p {
+
+    color: #aaa097;
+
+    font-size: 14px;
+
+    margin: 10px 0 25px;
+}
+
+
+#passwordInput {
+
+    width: 180px;
+
+    padding: 13px;
+
+    text-align: center;
+
+    background: #151515;
+
+    border: 1px solid #80663b;
+
+    color: #f5eee4;
+
+    font-size: 20px;
+
+    letter-spacing: 6px;
+
+    outline: none;
+
+}
+
+
+#passwordScreen button {
+
+    margin-top: 15px;
+
+    padding: 12px 28px;
+
+    background: #9b303c;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+#wrongPassword {
+
+    height: 20px;
+
+    margin-top: 12px;
+
+    color: #b85b65;
+
+    font-size: 12px;
+}
+
+
+/* ================= SCREENS ================= */
+
+.screen {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    padding: 30px 18px;
+}
+
+
+.screen.active {
+
+    display: flex;
+}
+
+
+/* ================= FLOATING PARTICLES ================= */
+
+.particle {
+
+    position: fixed;
+
+    color: #c9a86a;
+
+    opacity: .45;
+
+    animation: float 7s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+@keyframes float {
+
+    0% {
+
+        transform:
+            translateY(100vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: .5;
+    }
+
+    85% {
+
+        opacity: .5;
+    }
+
+    100% {
+
+        transform:
+            translateY(-10vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================= FIRST PAGE ================= */
+
+.intro {
+
+    text-align: center;
+
+    max-width: 500px;
+
+    z-index: 2;
+}
+
+
+.small-line {
+
+    color: #c9a86a;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+h1 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 13vw, 78px);
+
+    line-height: .9;
+
+    font-weight: 600;
+}
+
+
+h1 span {
+
+    display: block;
+
+    color: #9b303c;
+}
+
+
+.subtitle {
+
+    margin-top: 16px;
+
+    color: #c9c0b4;
+
+    font-size: 14px;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-frame {
+
+    width: 165px;
+
+    height: 205px;
+
+    margin: 25px auto;
+
+    padding: 9px 9px 28px;
+
+    background: #eee4d6;
+
+    transform: rotate(-3deg);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.5);
+
+    position: relative;
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #222;
+}
+
+
+.photo-caption {
+
+    position: absolute;
+
+    bottom: 6px;
+
+    left: 0;
+
+    width: 100%;
+
+    color: #171717;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 16px;
+}
+
+
+/* ================= CAKE ================= */
+
+.cake {
+
+    margin: 15px auto 20px;
+
+    width: 125px;
+
+    position: relative;
+}
+
+
+.candles {
+
+    height: 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.candle {
+
+    width: 8px;
+
+    height: 27px;
+
+    background: #c9a86a;
+
+    border-radius: 3px;
+
+    position: relative;
+}
+
+
+.flame {
+
+    width: 9px;
+
+    height: 13px;
+
+    background: #e8bd67;
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    position: absolute;
+
+    top: -13px;
+
+    left: -1px;
+
+    animation: flicker .8s infinite alternate;
+}
+
+
+@keyframes flicker {
+
+    from {
+
+        transform:
+            rotate(-45deg)
+            scale(.85);
+    }
+
+    to {
+
+        transform:
+            rotate(-45deg)
+            scale(1.1);
+    }
+}
+
+
+.cake-top {
+
+    height: 35px;
+
+    background: #eee4d6;
+
+    border-radius: 10px 10px 4px 4px;
+
+    border-bottom: 6px solid #9b303c;
+}
+
+
+.cake-bottom {
+
+    height: 30px;
+
+    width: 105%;
+
+    margin-left: -2.5%;
+
+    background: #9b303c;
+
+    border-radius: 5px 5px 12px 12px;
+}
+
+
+/* ================= ENVELOPE ================= */
+
+.envelope-wrap {
+
+    margin-top: 25px;
+}
+
+
+.envelope {
+
+    width: 220px;
+
+    height: 140px;
+
+    position: relative;
+
+    margin: auto;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 18px 25px rgba(0,0,0,.45)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+
+.envelope:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.env-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #eee4d6;
+
+    border-radius: 5px;
+}
+
+
+.env-back::before,
+.env-back::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-style: solid;
+}
+
+
+.env-back::before {
+
+    left: 0;
+
+    border-width:
+        0 110px 85px 0;
+
+    border-color:
+        transparent
+        #d7c5ae
+        transparent
+        transparent;
+}
+
+
+.env-back::after {
+
+    right: 0;
+
+    border-width:
+        85px 110px 0 0;
+
+    border-color:
+        #cdb99f
+        transparent
+        transparent
+        transparent;
+}
+
+
+.flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        110px solid transparent;
+
+    border-right:
+        110px solid transparent;
+
+    border-top:
+        78px solid #9b303c;
+
+    transform-origin: top;
+
+    transition:
+        transform .8s ease;
+
+    z-index: 4;
+}
+
+
+.heart-seal {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 58px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 25px;
+
+    transition:
+        opacity .3s;
+}
+
+
+.open-text {
+
+    margin-top: 15px;
+
+    color: #c9a86a;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* ================= SECOND PAGE ================= */
+
+.letter-screen {
+
+    padding: 45px 18px;
+}
+
+
+.letter-container {
+
+    width: min(650px, 100%);
+}
+
+
+.letter {
+
+    background: #eee4d6;
+
+    color: #201b18;
+
+    padding: 40px 30px;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
+
+    border-radius: 2px;
+
+    animation:
+        letterIn 1s ease;
+}
+
+
+@keyframes letterIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.letter::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        rgba(130,96,55,.35);
+
+    pointer-events: none;
+}
+
+
+.letter-top {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.letter-top .number {
+
+    color: #9b303c;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 70px;
+
+    line-height: .8;
+
+    font-weight: 700;
+}
+
+
+.letter-top h2 {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    margin-top: 8px;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 19px;
+
+    line-height: 1.55;
+}
+
+
+.message p {
+
+    margin-bottom: 17px;
+}
+
+
+.signature {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 32px;
+
+    color: #9b303c;
+
+    text-align: right;
+
+    margin-top: 20px;
+}
+
+
+/* ================= KASAULI ================= */
+
+.kasauli {
+
+    margin-top: 30px;
+
+    padding: 25px 20px;
+
+    background: #171414;
+
+    color: #eee4d6;
+
+    text-align: center;
+
+    border-top:
+        2px solid #c9a86a;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.kasauli .mountain {
+
+    font-size: 40px;
+
+    margin-bottom: 5px;
+}
+
+
+.kasauli h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    color: #c9a86a;
+}
+
+
+.date {
+
+    color: #fff;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin: 5px 0 15px;
+}
+
+
+.kasauli p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.45;
+
+    color: #cfc5b9;
+}
+
+
+/* ================= FINAL ================= */
+
+.final {
+
+    text-align: center;
+
+    margin-top: 28px;
+}
+
+
+.final .big-love {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 43px;
+
+    color: #9b303c;
+}
+
+
+.final p {
+
+    color: #8d8176;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .letter {
+
+        padding:
+            35px 22px;
+    }
+
+    .message {
+
+        font-size: 18px;
+    }
+
+    .photo-frame {
+
+        width: 150px;
+
+        height: 185px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- PASSWORD SCREEN -->
+<!-- ================================================= -->
+
+<div id="passwordScreen">
+
+    <div class="lock">
+        🔐
+    </div>
+
+    <div class="password-small">
+        A LITTLE SURPRISE FOR YOU
+    </div>
+
+    <h2>
+        Before you enter...
+    </h2>
+
+    <p>
+        Only the birthday boy knows the password ❤️
+    </p>
+
+    <input
+        type="password"
+        id="passwordInput"
+        placeholder="••"
+        maxlength="2"
+        inputmode="numeric"
+    >
+
+    <button onclick="checkPassword()">
+        Unlock ❤️
+    </button>
+
+    <div id="wrongPassword"></div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- FLOATING PARTICLES -->
+<!-- ================================================= -->
+
+<div class="particle"
+     style="left:8%; animation-delay:0s;">
+     ✦
+</div>
+
+<div class="particle"
+     style="left:20%; animation-delay:2s;">
+     ♡
+</div>
+
+<div class="particle"
+     style="left:37%; animation-delay:4s;">
+     ✦
+</div>
+
+<div class="particle"
+     style="left:62%; animation-delay:1s;">
+     ♡
+</div>
+
+<div class="particle"
+     style="left:78%; animation-delay:3s;">
+     ✦
+</div>
+
+<div class="particle"
+     style="left:90%; animation-delay:5s;">
+     ♡
+</div>
+
+
+<!-- ================================================= -->
+<!-- PAGE 1 -->
+<!-- ================================================= -->
+
+<section
+    class="screen active"
+    id="page1"
+>
+
+    <div class="intro">
+
+
+        <div class="small-line">
+
+            A LITTLE SOMETHING FOR YOU
+
+        </div>
+
+
+        <h1>
+
+            Happy 21st
+
+            <span>
+                Birthday Baby ❤️
+            </span>
+
+        </h1>
+
+
+        <div class="subtitle">
+
+            Because you deserve something special today.
+
+        </div>
+
+
+        <!-- HIS PHOTO -->
+
+        <!--
+        IMPORTANT:
+        Put his photo in the same GitHub folder
+        and name it photo.jpg
+        -->
+
+        <div class="photo-frame">
+
+            <img
+                src="photo.jpg"
+                alt="My favourite person"
+            >
+
+            <div class="photo-caption">
+
+                my favourite person ♡
+
+            </div>
+
+        </div>
+
+
+        <!-- CAKE -->
+
+        <div class="cake">
+
+
+            <div class="candles">
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="cake-top"></div>
+
+            <div class="cake-bottom"></div>
+
+
+        </div>
+
+
+        <!-- ENVELOPE -->
+
+        <div class="envelope-wrap">
+
+
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openLetter()"
+            >
+
+
+                <div class="env-back"></div>
+
+
+                <div
+                    class="flap"
+                    id="flap"
+                ></div>
+
+
+                <div
+                    class="heart-seal"
+                    id="seal"
+                >
+
+                    ❤️
+
+                </div>
+
+
+            </div>
+
+
+            <div class="open-text">
+
+                TAP THE ENVELOPE TO OPEN
+                YOUR LETTER
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PAGE 2 -->
+<!-- ================================================= -->
+
+<section
+    class="screen letter-screen"
+    id="page2"
+>
+
+
+    <div class="letter-container">
+
+
+        <div class="letter">
+
+
+            <!-- LETTER HEADER -->
+
+            <div class="letter-top">
+
+                <div class="number">
+
+                    21
+
+                </div>
+
+
+                <h2>
+
+                    Happy Birthday, Baby
+
+                </h2>
+
+            </div>
+
+
+            <!-- BIRTHDAY MESSAGE -->
+
+            <div class="message">
+
+
+                <p>
+
+                    Happy 21st Birthday, baby ❤️🥹
+
+                </p>
+
+
+                <p>
+
+                    I love you sooo much, and I
+                    genuinely feel like you are
+                    the best boyfriend in the whole
+                    world.
+
+                </p>
+
+
+                <p>
+
+                    You are so mature for your age,
+                    and I honestly admire the way
+                    you manage everything. You go
+                    to college, take care of the café,
+                    give time to your family, and
+                    somehow still manage to make
+                    time for me and make me feel
+                    loved. 🥹❤️
+
+                </p>
+
+
+                <p>
+
+                    Even when we fight, I love how
+                    you always try to solve things
+                    and make everything okay instead
+                    of just letting things stay bad
+                    between us. You always make an
+                    effort, and that means more to
+                    me than you know.
+
+                </p>
+
+
+                <p>
+
+                    I don't think I could ever find
+                    someone like you again in my
+                    life. You are truly the best,
+                    my baby, and I feel so lucky
+                    to have you. ❤️
+
+                </p>
+
+
+                <p>
+
+                    I hope you always stay the same
+                    person I fell in love with.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- KASAULI -->
+            <!-- ================================================= -->
+
+            <div class="kasauli">
+
+
+                <div class="mountain">
+
+                    🏔️
+
+                </div>
+
+
+                <h3>
+
+                    Next Stop: Kasauli
+
+                </h3>
+
+
+                <div class="date">
+
+                    12 • OCTOBER
+
+                </div>
+
+
+                <p>
+
+                    And I am sooo excited for our
+                    Kasauli trip because I'll finally
+                    get to properly celebrate your
+                    birthday with you, with all the
+                    decor and everything hehe 🥹❤️
+
+                </p>
+
+
+                <p style="margin-top:12px;">
+
+                    I can't wait to spend that time
+                    with you and make another
+                    beautiful memory together.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- MORE MESSAGE -->
+
+            <div
+                class="message"
+                style="margin-top:25px;"
+            >
+
+
+                <p>
+
+                    I wish and hope that we never
+                    come apart and that we get to
+                    celebrate so many more birthdays
+                    together.
+
+                </p>
+
+
+                <p>
+
+                    I want to be there for all your
+                    good days, bad days, achievements,
+                    failures, everything.
+
+                </p>
+
+
+                <p>
+
+                    You deserve all the happiness
+                    in the world, and I'll always be
+                    rooting for you. ❤️
+
+                </p>
+
+
+            </div>
+
+
+            <!-- SIGNATURE -->
+
+            <div class="signature">
+
+                I love you sooo much ❤️
+
+            </div>
+
+
+            <!-- END -->
+
+            <div class="final">
+
+
+                <div class="big-love">
+
+                    Here's to us.
+
+                </div>
+
+
+                <p>
+
+                    MANY MORE BIRTHDAYS TOGETHER ♡
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script>
+
+
+/* ================= PASSWORD ================= */
+
+function checkPassword() {
+
+
+    const password =
+        document.getElementById(
+            "passwordInput"
+        ).value;
+
+
+    const error =
+        document.getElementById(
+            "wrongPassword"
+        );
+
+
+    if (password === "21") {
+
+
+        document.getElementById(
+            "passwordScreen"
+        ).style.display = "none";
+
+
+        document.body.style.overflow =
+            "auto";
+
+
+    } else {
+
+
+        error.innerHTML =
+            "Hmm... try again, birthday boy 😉";
+
+
+        document.getElementById(
+            "passwordInput"
+        ).value = "";
+
+    }
+
+}
+
+
+/* ================= ENTER KEY ================= */
+
+document
+    .getElementById("passwordInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                checkPassword();
+
+            }
+
+        }
+    );
+
+
+/* ================= OPEN ENVELOPE ================= */
+
+function openLetter() {
+
+
+    const flap =
+        document.getElementById(
+            "flap"
+        );
+
+
+    const seal =
+        document.getElementById(
+            "seal"
+        );
+
+
+    /* Envelope opens */
+
+    flap.style.transform =
+        "rotateX(180deg)";
+
+
+    seal.style.opacity = "0";
+
+
+    /* Move to letter */
+
+    setTimeout(function() {
+
+
+        document
+            .getElementById("page1")
+            .classList
+            .remove("active");
+
+
+        document
+            .getElementById("page2")
+            .classList
+            .add("active");
+
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+
+    }, 850);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
